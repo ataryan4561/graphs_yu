@@ -13,13 +13,26 @@ void addedge(int u,int v)
 }
 void dfs(vector<vector<int>> &graph,int run,vector<bool> &vis)
 {
-    cout<<run<<" ";
+    //cout<<run<<" ";
     vis[run]=true;
     for(int child : graph[run])
     {
         if (!vis[child])
             dfs(graph, child,vis);
     }
+}
+int connected_components(int n,vector<bool> &vis)
+{
+    int count=0;
+    for(int i=0; i<n; i++)
+    {
+        if(!vis[i])
+        {
+            count++;
+            dfs(graph,i,vis);
+        }
+    }
+    return count;
 }
 // void display()
 // {
@@ -60,7 +73,8 @@ int main()
         // connect edges 
         }
         vector<bool> vis(n,false);
-        dfs(graph,0,vis);
+        //dfs(graph,0,vis);
+        cout<<connected_components(graph.size(),vis)<<endl;
         // display(); 
         // for display of graph 
     }
