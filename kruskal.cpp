@@ -43,7 +43,6 @@ void kruskal()
     sort(kruskal_vec.begin(),kruskal_vec.end(),compare);
     vector<Edge> out(n-1);
     int parent[n];
-    cout<<"p"<<endl;
     for(int i=0; i<n; i++)
     {
         parent[i]=i;
@@ -65,7 +64,7 @@ void kruskal()
     cout<<"Here is the MST"<<endl;
     for(int i=0; i<n-1; i++)
     {
-        cout<<min(out[i].u,out[i].v)<<" "<<max(out[i].u,out[i].v)<<endl;
+        cout<<min(out[i].u,out[i].v)<<" "<<max(out[i].u,out[i].v)<<" "<<out[i].w<<endl;
     }
 }
 void display()
