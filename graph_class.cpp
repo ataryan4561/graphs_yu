@@ -51,4 +51,5 @@ int main()
         addedges(l,r,w);
     }
     display();
+    cout<<endl;
 }
